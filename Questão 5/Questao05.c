@@ -43,6 +43,11 @@ int ler_double_valido(double *resultado) {
         }
         endptr++;
     }
+
+    if(*resultado == 0.0) {
+        return 0;
+     }
+
     return 1; // ==== LEITURA 100% VÁLIDA =====
 }
 
@@ -58,7 +63,7 @@ int main() {
     printf("==== ENTRADA DE DADOS ====\n\n");
 
     while (true) {
-        printf("Digite o valor do número: ");
+        printf("Digite o valor do número (maior ou menor que zero): ");
 
         if(ler_double_valido(&numeroDeEntrada)) {
             printf("==== NÚMERO VALIDADO ====\n\n");
